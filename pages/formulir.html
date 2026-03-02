@@ -163,7 +163,7 @@
     /* ========== PAGE HERO ========== */
     .page-hero {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #3a5f58 100%);
-      padding: 140px 8% 80px;
+      padding: 140px 8% 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -263,7 +263,7 @@
     .main-content {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 20px 0px;
+      padding: 20px 20px 0px;
     }
 
     /* ========== FORM CARD ========== */
@@ -289,7 +289,7 @@
       border-radius: 16px;
       padding: 18px 25px;
       box-shadow: var(--shadow);
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       border-left: 5px solid var(--accent);
     }
 
@@ -586,27 +586,123 @@
     /* Loading spinner */
     /* Former utility styles removed */
 
-    /* Scaling trick for Google Forms iframe */
-    .iframe-scaler {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
+    /* ========== PROFESSIONAL FORM SECTION ========== */
+    .form-stage {
+      position: relative;
+      padding: 20px 0;
     }
 
-    .iframe-scaler iframe {
-      width: 111.1%;
-      /* 1 / 0.9 to compensate scale */
-      transform: scale(0.9);
-      transform-origin: 0 0;
-      border: none;
-      display: block;
+    .form-stage::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 60%;
+      background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    .form-card-premium {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border-top: 6px solid var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-header-premium {
+      background: linear-gradient(to right, #fbfbfb, #ffffff);
+      padding: 25px 30px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .form-header-premium .icon-box {
+      width: 45px;
+      height: 45px;
+      background: var(--accent-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .form-header-premium h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .form-header-premium p {
+      font-size: 12px;
+      color: #777;
+      margin: 0;
+    }
+
+    .form-loading-overlay {
+      position: absolute;
+      top: 110px;
+      /* Below header */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 110px);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .form-loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .premium-loader {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     @media (max-width: 480px) {
-      .iframe-scaler iframe {
-        width: 117.6%;
-        /* 1 / 0.85 for extra compact mobile */
-        transform: scale(0.85);
+      .form-header-premium {
+        padding: 20px;
+      }
+
+      .form-header-premium .icon-box {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+      }
+
+      .form-header-premium h3 {
+        font-size: 16px;
       }
     }
   </style>
@@ -649,11 +745,11 @@
       <div class="hero-steps">
         <div class="hero-step">
           <div class="hero-step-num">1</div>
-          Isi Formulir Ini Dengan Benar
+          Isi Formulir Ini Dengan Benar.
         </div>
         <div class="hero-step">
           <div class="hero-step-num">2</div>
-          Verifikasi via WhatsApp
+          Verifikasi via WhatsApp.
         </div>
         <div class="hero-step">
           <div class="hero-step-num">3</div>
@@ -682,12 +778,39 @@
       </ul>
     </div>
 
-    <!-- Google Forms Embed -->
-    <div class="form-card fade-in" style="padding-top: 5px; max-height: 700px; overflow: hidden;">
-      <div class="iframe-scaler" style="height: 1000px;">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSckROUm8l0ogg_MajgJ_p8rREKw6tFoBSB6ddJ4Zjrp2phl7g/viewform?embedded=true"
-          height="800" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+    <!-- Professional Google Forms Section -->
+    <div class="form-stage fade-in">
+      <div class="form-card-premium">
+        <!-- Header -->
+        <div class="form-header-premium">
+          <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+          </div>
+          <div>
+            <h3>Pendaftaran Online</h3>
+            <p>Silakan lengkapi formulir di bawah ini dengan data yang valid</p>
+          </div>
+        </div>
+
+        <!-- Loading state -->
+        <div class="form-loading-overlay" id="formLoader">
+          <div class="premium-loader"></div>
+          <p style="font-size: 13px; color: #999; font-weight: 500;">Menyiapkan Formulir...</p>
+        </div>
+
+        <!-- Iframe container -->
+        <div class="iframe-scaler" style="height: 720px; position: relative;">
+          <iframe id="googleForm"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSckROUm8l0ogg_MajgJ_p8rREKw6tFoBSB6ddJ4Zjrp2phl7g/viewform?embedded=true"
+            height="800" frameborder="0" marginheight="0" marginwidth="0" onload="hideLoader()">Memuat…</iframe>
+        </div>
       </div>
     </div>
 
@@ -758,6 +881,14 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 80);
     });
+
+    // ===== HIDE FORM LOADER =====
+    function hideLoader() {
+      const loader = document.getElementById('formLoader');
+      if (loader) {
+        loader.classList.add('hidden');
+      }
+    }
 
   </script>
 
