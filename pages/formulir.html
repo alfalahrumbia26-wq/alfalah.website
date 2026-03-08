@@ -870,9 +870,10 @@
     /* Kolom waktu selalu emas di semua ukuran layar */
     td:first-child,
     th:first-child {
-      color: var(--accent);
-      font-weight: 700;
+      color: var(--accent) !important;
+      font-weight: 700 !important;
       white-space: nowrap;
+      font-size: 15px !important;
     }
 
     tbody tr:nth-child(odd) {
@@ -1712,12 +1713,17 @@
       }
 
       table {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       th,
       td {
         padding: 10px 12px;
+      }
+
+      td:first-child,
+      th:first-child {
+        font-size: 15px !important;
       }
     }
 
