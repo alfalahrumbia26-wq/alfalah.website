@@ -2032,19 +2032,12 @@
       <li>Manakib</li>
       <li>Khitobah</li>
     </ul>
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-item"><img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 1.jpeg"
-            alt="Bulanan 1"></div>
-        <div class="carousel-item"><img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 2.jpeg"
-            alt="Bulanan 2"></div>
-        <div class="carousel-item"><img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 3.jpeg"
-            alt="Bulanan 3"></div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-button" id="prevBtn" aria-label="Previous">‹</button>
-        <button class="carousel-button" id="nextBtn" aria-label="Next">›</button>
-      </div>
+    <div class="gallery">
+      <img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 1.jpeg" alt="Bulanan 1">
+      <img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 2.jpeg" alt="Bulanan 2">
+      <img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Bulanan 3.jpeg" alt="Bulanan 3">
+      <img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Harian 1.jpeg Bulanan 3.jpeg" alt="Bulanan 4">
+      <img loading="lazy" src="../img/Kegiatan Bulanan/Kegiatan Harian 2.jpeg Bulanan 3.jpeg" alt="Bulanan 5">
     </div>
   </section>
 
@@ -2628,35 +2621,7 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // ========== CAROUSEL ==========
-    const track = document.querySelector('.carousel-track');
-    const items = Array.from(track.children);
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let idx = 0;
-    const total = items.length;
-
-    function goTo(i) {
-      idx = (i + total) % total;
-      track.style.transform = `translateX(-${idx * 100}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      goTo(idx + 1);
-      resetAutoplay();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      goTo(idx - 1);
-      resetAutoplay();
-    });
-
-    let autoplay = setInterval(() => goTo(idx + 1), 5000);
-
-    function resetAutoplay() {
-      clearInterval(autoplay);
-      autoplay = setInterval(() => goTo(idx + 1), 5000);
-    }
+    // ========== CAROUSEL (dihapus - diganti scroll gallery) ==========
 
     // ========== LIGHTBOX GALLERY ==========
     const lightbox = document.getElementById('lightbox');
