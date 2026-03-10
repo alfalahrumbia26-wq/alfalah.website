@@ -11,7 +11,6 @@
   <meta name="keywords"
     content="pondok pesantren, al-falah, rumbia, lampung tengah, pesantren salafiyah, madrasah diniyah">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -19,7 +18,6 @@
     rel="stylesheet">
 
   <style>
-    /* ========== RESET & BASE ========== */
     * {
       margin: 0;
       padding: 0;
@@ -58,7 +56,6 @@
       position: relative;
     }
 
-    /* GLOBAL MOBILE SCALE REDUCTION */
     @media (max-width: 768px) {
       body {
         font-size: 13.5px;
@@ -75,7 +72,6 @@
 
       .hero-header {
         height: 60vh !important;
-        /* Memastikan hero tidak terlalu tinggi di mobile */
       }
 
       .hero-content h1 {
@@ -131,7 +127,6 @@
       margin: 0 auto;
     }
 
-    /* ========== NAVIGATION BAR ========== */
     .navbar {
       position: fixed;
       top: 0;
@@ -163,7 +158,6 @@
       gap: 20px;
     }
 
-    /* Logo + nama pesantren */
     .nav-brand {
       display: flex;
       align-items: center;
@@ -199,7 +193,6 @@
       opacity: 0.9;
     }
 
-    /* Menu links */
     .nav-menu {
       display: flex;
       gap: 6px;
@@ -247,7 +240,6 @@
       background: rgba(212, 175, 55, 0.1);
     }
 
-    /* Tombol daftar di navbar */
     .nav-cta {
       display: inline-block;
       padding: 9px 20px;
@@ -273,7 +265,6 @@
       color: #1a1a1a !important;
     }
 
-    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -314,7 +305,6 @@
       transform: translateY(-7.5px) rotate(-45deg);
     }
 
-    /* ========== HERO SECTION ========== */
     .hero-header {
       position: relative;
       width: 100%;
@@ -408,10 +398,8 @@
       box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
     }
 
-    /* ========== STATS & CTA REFINED ========== */
     .stats-cta {
       background: #ffffff;
-      /* Putih bersih agar kontras dengan hero/footer */
       padding: 35px 5%;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       position: relative;
@@ -446,7 +434,6 @@
       padding: 5px 10px;
     }
 
-    /* Garis pemisah antar item */
     .stat-item:not(:last-child)::after {
       content: '';
       position: absolute;
@@ -474,7 +461,6 @@
       font-weight: 600;
     }
 
-    /* Premium Button - Smaller version */
     .cta-wrapper {
       position: relative;
     }
@@ -501,7 +487,6 @@
       box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
     }
 
-    /* Mobile Adjustments */
     @media (max-width: 600px) {
       .stats-cta {
         padding: 25px 3%;
@@ -522,7 +507,6 @@
       }
     }
 
-    /* icon class kept for WA float button */
     .icon {
       width: 24px;
       height: 24px;
@@ -536,7 +520,6 @@
       background-image: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg');
     }
 
-    /* ========== SECTIONS ========== */
     .section-title {
       font-size: 38px;
       font-weight: 700;
@@ -567,7 +550,6 @@
       color: var(--text-light);
     }
 
-    /* ========== SAMBUTAN PENGASUH ========== */
     .sambutan {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -599,7 +581,6 @@
       font-size: 18px;
     }
 
-    /* ========== PROGRAM UNGGULAN ========== */
     .program-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -638,7 +619,6 @@
       opacity: 0.9;
     }
 
-    /* ========== VISI MISI ========== */
     .visi-misi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -664,7 +644,6 @@
       line-height: 1.8;
     }
 
-    /* ========== GALLERY ========== */
     .super-combo {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -691,7 +670,6 @@
       position: relative;
     }
 
-    /* ========== FASILITAS CARD ========== */
     .fasilitas-item {
       text-align: center;
     }
@@ -789,7 +767,6 @@
       position: relative;
     }
 
-    /* ========== CAROUSEL ========== */
     .carousel {
       position: relative;
       overflow: hidden;
@@ -848,7 +825,6 @@
       background: rgba(212, 175, 55, 0.9);
     }
 
-    /* ========== TABLE ========== */
     .table-wrapper {
       overflow-x: auto;
       margin-top: 30px;
@@ -877,7 +853,6 @@
       font-weight: 700;
     }
 
-    /* Kolom waktu selalu emas di semua ukuran layar */
     td:first-child,
     th:first-child {
       color: var(--accent) !important;
@@ -890,7 +865,6 @@
       background: rgba(0, 0, 0, 0.03);
     }
 
-    /* ========== MATERI MADRASAH ========== */
     .materi-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -975,7 +949,6 @@
       margin-bottom: 0;
     }
 
-    /* ========== RESPONSIVE MATERI ========== */
     @media (max-width: 992px) {
       .materi-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1000,7 +973,6 @@
       }
     }
 
-    /* ========== INFO BOXES ========== */
     .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1033,7 +1005,6 @@
       opacity: 0.9;
     }
 
-    /* ========== TESTIMONI ========== */
     .testimoni-slider {
       max-width: 800px;
       margin: 40px auto 0;
@@ -1081,7 +1052,6 @@
       font-size: 20px;
     }
 
-    /* ========== CONTACT FORM ========== */
     .contact-section {
       max-width: 800px;
       margin: 0 auto;
@@ -1146,7 +1116,6 @@
       box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
     }
 
-    /* ========== MAPS ========== */
     .maps-container {
       border-radius: 15px;
       overflow: hidden;
@@ -1178,7 +1147,6 @@
       }
     }
 
-    /* ========== REFINED CONTENT BLOCKS ========== */
     .content-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1291,15 +1259,12 @@
       border-bottom: none;
     }
 
-    /* Adjustments for mobile */
     @media (max-width: 768px) {
       .info-box-premium {
         padding: 30px 20px;
       }
     }
 
-    /* ========== FOOTER ========== */
-    /* ========== NASA-INSPIRED FOOTER ========== */
     .footer {
       background: #000;
       color: #fff;
@@ -1366,20 +1331,17 @@
     @media (max-width: 992px) {
       .footer-content {
         grid-template-columns: 1.4fr 0.6fr;
-        /* 2 columns for links, adjusted for long names */
         gap: 35px 20px;
         padding: 0 5%;
       }
 
       .footer-identity {
         grid-column: 1 / -1;
-        /* Full width top */
         text-align: left;
       }
 
       .footer-identity img.footer-logo {
         width: 48px !important;
-        /* Extremely small logo like NASA */
         margin-bottom: 15px !important;
       }
 
@@ -1403,7 +1365,6 @@
         margin-bottom: 15px;
         font-weight: 600;
         color: #fff !important;
-        /* Pure white titles like NASA */
       }
 
       .social-list-extended a,
@@ -1412,7 +1373,6 @@
         gap: 8px;
         color: #fff !important;
         white-space: nowrap;
-        /* More white links, no wrap */
       }
 
       .footer {
@@ -1441,7 +1401,6 @@
 
 
 
-    /* ========== LIGHTBOX ========== */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1511,7 +1470,6 @@
       right: 20px;
     }
 
-    /* ========== ANIMATIONS ========== */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -1535,13 +1493,11 @@
       transform: translateY(0);
     }
 
-    /* ========== RESPONSIVE ========== */
     @media (max-width: 900px) {
       .hamburger {
         display: flex;
       }
 
-      /* Perkecil font nama agar muat di layar sempit */
       .nav-brand-name {
         font-size: 12px;
       }
@@ -1554,7 +1510,6 @@
         height: 36px;
       }
 
-      /* Panel menu slide dari kanan */
       .nav-menu {
         position: fixed;
         top: 0;
@@ -1572,7 +1527,6 @@
         z-index: 9998;
       }
 
-      /* Header panel dengan nama pesantren */
       .nav-menu::before {
         content: 'Menu Navigasi';
         display: block;
@@ -1611,7 +1565,6 @@
         color: var(--accent);
       }
 
-      /* Tombol Home di dalam panel */
       .nav-menu li:last-child {
         padding: 16px 12px 8px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1668,7 +1621,6 @@
 
     @media (max-width: 768px) {
 
-      /* Perkecil hero agar statistik di bawahnya terlihat */
       .hero-header {
         height: 65vh;
         margin-top: 60px;
@@ -1708,9 +1660,7 @@
         gap: 4px;
       }
 
-      .carousel {
-        /* aspect-ratio: 9/16 tetap aktif, tidak perlu override height */
-      }
+      .carousel {}
 
       .back-to-top {
         right: 30px;
@@ -1741,7 +1691,6 @@
         height: 32px;
       }
 
-      /* Layar sangat kecil: perkecil keduanya, tetap tampil */
       .nav-brand-name {
         font-size: 11px;
       }
@@ -1759,7 +1708,6 @@
         font-size: 14px;
       }
 
-      /* Satu kolom di HP kecil agar gambar portrait tidak terlalu sempit */
       .grid-gallery,
       .super-combo,
       .fasilitas-gallery {
@@ -2318,52 +2266,47 @@
     <h2 class="section-title">Fasilitas</h2>
     <div class="fasilitas-gallery">
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Masjid.jpeg" alt="Masjid">
+        <img loading="lazy" src="../img/Fasilitas/Masjid.jpg" alt="Masjid">
         <h4 class="fasilitas-name">Masjid</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Kantin Putra.jpeg" alt="Perpustakaan">
+        <img loading="lazy" src="../img/Fasilitas/Kantin Putra.jpg" alt="Perpustakaan">
         <h4 class="fasilitas-name">Kantin Putra</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Aula Putra.jpeg" alt="Aula">
+        <img loading="lazy" src="../img/Fasilitas/Aula Putra.jpg" alt="Aula">
         <h4 class="fasilitas-name">Aula Putra</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Asrama Putra.jpeg" alt="Ruang Kelas">
+        <img loading="lazy" src="../img/Fasilitas/Asrama Putra.jpg" alt="Ruang Kelas">
         <h4 class="fasilitas-name">Asrama Putra</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Ruang Kelas.jpeg" alt="Ruang Kelas">
-        <h4 class="fasilitas-name">Ruang Kelas</h4>
-      </div>
-
-      <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Kantor Putri.jpeg" alt="Masjid">
+        <img loading="lazy" src="../img/Fasilitas/Kantor Putri.jpg" alt="Masjid">
         <h4 class="fasilitas-name">Kantor Putri</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Kantin Putri.jpeg" alt="Perpustakaan">
+        <img loading="lazy" src="../img/Fasilitas/Kantin Putri.jpg" alt="Perpustakaan">
         <h4 class="fasilitas-name">Kantin Putri</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Aula Putri.jpeg" alt="Aula">
+        <img loading="lazy" src="../img/Fasilitas/Aula Putri.jpg" alt="Aula">
         <h4 class="fasilitas-name">Aula Putri</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Asrama Formal Putri.jpeg" alt="Ruang Kelas">
+        <img loading="lazy" src="../img/Fasilitas/Asrama Formal Putri.jpg" alt="Ruang Kelas">
         <h4 class="fasilitas-name">Asrama Formal Putri</h4>
       </div>
 
       <div class="fasilitas-item">
-        <img loading="lazy" src="../img/Fasilitas/Asrama Tahfidz Putri.jpeg" alt="Ruang Kelas">
+        <img loading="lazy" src="../img/Fasilitas/Asrama Tahfidz Putri.jpg" alt="Ruang Kelas">
         <h4 class="fasilitas-name">Asrama Tahfidz Putri</h4>
       </div>
     </div>
