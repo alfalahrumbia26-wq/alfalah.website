@@ -42,10 +42,11 @@
       font-family: 'Poppins', sans-serif;
       background-color: #ffffff;
       color: var(--text-light);
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
     /* ─── Background ─── */
@@ -60,31 +61,32 @@
       position: relative;
       z-index: 1;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px;
     }
 
     /* ─── Main Content ─── */
     .main-content {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px 24px;
+      width: 100%;
     }
 
     .content-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      max-width: 960px;
+      max-width: 780px;
       width: 100%;
       border: 1px solid var(--accent-border);
       background: #1b2f2b;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.10);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
       animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(20px);
     }
 
     @keyframes riseIn {
@@ -96,7 +98,7 @@
 
     /* Left Panel */
     .panel-left {
-      padding: 56px 48px;
+      padding: 32px 32px;
       border-right: 1px solid var(--accent-border);
       display: flex;
       flex-direction: column;
@@ -106,32 +108,33 @@
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      font-size: 9.5px;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 8.5px;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--accent);
       border: 1px solid var(--accent-border);
       background: var(--accent-light);
       width: fit-content;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
 
     .badge-dot {
-      width: 5px;
-      height: 5px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       background: var(--accent);
     }
 
     .main-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 36px;
-      line-height: 1.2;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
       color: var(--text-light);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .main-title span {
@@ -139,28 +142,28 @@
     }
 
     .main-subtitle {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 300;
       color: var(--text-muted);
-      line-height: 1.9;
-      margin-bottom: 36px;
-      max-width: 340px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 300px;
     }
 
     /* Progress */
     .progress-section {
-      margin-bottom: 36px;
+      margin-bottom: 20px;
     }
 
     .progress-label {
       display: flex;
       justify-content: space-between;
-      font-size: 10.5px;
+      font-size: 9px;
       font-weight: 500;
       color: var(--text-muted);
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     .progress-pct {
@@ -168,7 +171,7 @@
     }
 
     .progress-track {
-      height: 3px;
+      height: 2.5px;
       background: rgba(255, 255, 255, 0.07);
       position: relative;
       overflow: hidden;
@@ -187,11 +190,11 @@
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
+      box-shadow: 0 0 6px var(--accent);
     }
 
     /* Steps */
@@ -199,14 +202,14 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 9px;
     }
 
     .step-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 12px;
+      gap: 9px;
+      font-size: 11px;
       color: var(--text-muted);
     }
 
@@ -219,15 +222,15 @@
     }
 
     .step-icon {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       border: 1.5px solid rgba(255, 255, 255, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      font-size: 9px;
+      font-size: 8px;
     }
 
     .step-item.done .step-icon {
@@ -238,7 +241,7 @@
 
     .step-item.active .step-icon {
       background: transparent;
-      border: 2.5px solid rgba(212, 175, 55, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.2);
       border-top-color: var(--accent);
       color: transparent;
       animation: spinIcon 0.9s linear infinite;
@@ -252,53 +255,54 @@
 
     /* Right Panel */
     .panel-right {
-      padding: 56px 44px;
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 18px;
     }
 
     /* Countdown */
     .countdown-block {
-      margin-bottom: 36px;
+      margin-bottom: 0;
     }
 
     .countdown-title {
-      font-size: 9.5px;
+      font-size: 8.5px;
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 7px;
     }
 
     .countdown-unit {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.07);
-      padding: 16px 8px 12px;
+      padding: 10px 6px 8px;
       text-align: center;
     }
 
     .countdown-num {
       font-family: 'Poppins', sans-serif;
-      font-size: 28px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--accent);
       line-height: 1;
-      margin-bottom: 8px;
-      letter-spacing: -1px;
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
     }
 
     .countdown-label {
-      font-size: 8.5px;
+      font-size: 7.5px;
       font-weight: 500;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--text-muted);
     }
@@ -307,27 +311,26 @@
     .info-block {
       background: rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 18px 20px;
-      margin-bottom: 28px;
+      padding: 12px 14px;
     }
 
     .info-title {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 600;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
     .info-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
-      font-size: 11px;
+      margin-bottom: 6px;
+      font-size: 10px;
     }
 
     .info-row:last-child {
@@ -342,34 +345,34 @@
     .info-val {
       color: var(--text-soft);
       font-family: 'Courier New', monospace;
-      font-size: 10.5px;
+      font-size: 9.5px;
       text-align: right;
     }
 
     .info-val.live {
       color: var(--accent);
-      font-size: 10px;
+      font-size: 9.5px;
     }
 
     /* CTA */
     .cta-wrap {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 9px;
     }
 
     .btn-primary {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 14px 24px;
+      gap: 7px;
+      padding: 11px 20px;
       background: var(--accent);
       color: var(--primary-dark);
       text-decoration: none;
-      font-size: 12.5px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       transition: all 0.3s ease;
     }
@@ -377,19 +380,19 @@
     .btn-primary:hover {
       background: #e2c14a;
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
     }
 
     .btn-primary svg {
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
     }
 
     .contact-note {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
       text-align: center;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .contact-note a {
@@ -403,9 +406,15 @@
     }
 
     /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      .main-content {
-        padding: 32px 16px;
+    @media (max-width: 600px) {
+      body {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+      }
+
+      .page-wrapper {
+        padding: 20px 14px;
         align-items: flex-start;
       }
 
@@ -414,45 +423,21 @@
       }
 
       .panel-left {
-        padding: 36px 28px 28px;
+        padding: 24px 22px 20px;
         border-right: none;
         border-bottom: 1px solid var(--accent-border);
       }
 
       .panel-right {
-        padding: 28px 28px 36px;
-        gap: 28px;
+        padding: 20px 22px 24px;
       }
 
       .main-title {
-        font-size: 26px;
-      }
-
-      .countdown-grid {
-        gap: 8px;
-      }
-
-      .countdown-num {
-        font-size: 22px;
-      }
-
-    }
-
-    @media (max-width: 400px) {
-      .panel-left {
-        padding: 28px 20px 24px;
-      }
-
-      .panel-right {
-        padding: 24px 20px 28px;
-      }
-
-      .main-title {
-        font-size: 22px;
-      }
-
-      .countdown-num {
         font-size: 20px;
+      }
+
+      .countdown-num {
+        font-size: 18px;
       }
     }
   </style>
