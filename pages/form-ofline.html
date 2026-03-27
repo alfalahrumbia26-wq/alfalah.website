@@ -400,74 +400,104 @@
         }
 
         /* Jam operasional */
-        .jam-list {
+        .jam-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .jam-group {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(40, 68, 63, 0.1);
+        }
+
+        .jam-group-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e3330 100%);
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .jam-group-icon {
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        .jam-group-day {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.2px;
+        }
+
+        .jam-session-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 8px;
         }
 
-        .jam-row {
-            display: flex;
-            justify-content: space-between;
+        .jam-session-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
+            gap: 10px;
             padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 12.5px;
+            border-bottom: 1px solid rgba(40, 68, 63, 0.06);
         }
 
-        .jam-row:nth-child(odd) {
-            background: rgba(40, 68, 63, 0.05);
+        .jam-session-row:last-child {
+            border-bottom: none;
         }
 
-        .jam-day {
-            font-weight: 600;
-            color: var(--primary);
+        .jam-session-row:nth-child(even) {
+            background: rgba(40, 68, 63, 0.03);
+        }
+
+        .jam-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 50px;
             white-space: nowrap;
             flex-shrink: 0;
         }
 
-        .jam-time {
-            color: #555;
-        }
-
-        .jam-closed {
-            color: #e53935;
-            font-weight: 600;
-            font-size: 11px;
-            background: rgba(229, 57, 53, 0.08);
-            padding: 2px 8px;
-            border-radius: 50px;
-        }
-
-        .jam-right {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .jam-period {
-            font-size: 10px;
-            font-weight: 600;
-            padding: 2px 7px;
-            border-radius: 50px;
-        }
-
-        .jam-period.pagi {
+        .jam-badge.pagi {
             background: rgba(251, 191, 36, 0.15);
             color: #b45309;
+            border: 1px solid rgba(251, 191, 36, 0.3);
         }
 
-        .jam-period.siang {
+        .jam-badge.siang {
             background: rgba(59, 130, 246, 0.12);
             color: #1d4ed8;
+            border: 1px solid rgba(59, 130, 246, 0.25);
         }
 
-        .jam-period.malam {
+        .jam-badge.malam {
             background: rgba(109, 40, 217, 0.1);
             color: #6d28d9;
+            border: 1px solid rgba(109, 40, 217, 0.2);
+        }
+
+        .jam-time-label {
+            font-size: 12px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .jam-wib {
+            font-size: 10px;
+            color: #999;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .jam-note {
@@ -1105,28 +1135,54 @@
                     <h3>Jam Operasional Kantor</h3>
                 </div>
                 <div class="info-card-body">
-                    <ul class="jam-list">
-                        <li class="jam-row">
-                            <span class="jam-day">Sabtu – Kamis</span>
-                            <div class="jam-right">
-                                <span class="jam-time">08.00 – 12.00 WIB</span>
-                                <span class="jam-period pagi">Pagi</span>
-                                <span class="jam-time">13.00 – 15.00 WIB</span>
-                                <span class="jam-period siang">Siang</span>
-                                <span class="jam-time">20.00 – 22.00 WIB</span>
-                                <span class="jam-period malam">Malam</span>
+                    <div class="jam-block">
+
+                        <!-- Sabtu - Kamis -->
+                        <div class="jam-group">
+                            <div class="jam-group-header">
+                                <span class="jam-group-icon">📅</span>
+                                <span class="jam-group-day">Sabtu – Kamis</span>
                             </div>
-                        </li>
-                        <li class="jam-row">
-                            <span class="jam-day">Jumat</span>
-                            <div class="jam-right">
-                                <span class="jam-time">08.00 – 11.00 WIB</span>
-                                <span class="jam-period pagi">Pagi</span>
-                                <span class="jam-time">20.00 – 22.00 WIB</span>
-                                <span class="jam-period malam">Malam</span>
+                            <ul class="jam-session-list">
+                                <li class="jam-session-row">
+                                    <span class="jam-badge pagi">☀️ Pagi</span>
+                                    <span class="jam-time-label">08.00 – 12.00</span>
+                                    <span class="jam-wib">WIB</span>
+                                </li>
+                                <li class="jam-session-row">
+                                    <span class="jam-badge siang">🌤 Siang</span>
+                                    <span class="jam-time-label">13.00 – 15.00</span>
+                                    <span class="jam-wib">WIB</span>
+                                </li>
+                                <li class="jam-session-row">
+                                    <span class="jam-badge malam">🌙 Malam</span>
+                                    <span class="jam-time-label">20.00 – 22.00</span>
+                                    <span class="jam-wib">WIB</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Jumat -->
+                        <div class="jam-group">
+                            <div class="jam-group-header">
+                                <span class="jam-group-icon">📅</span>
+                                <span class="jam-group-day">Jumat</span>
                             </div>
-                        </li>
-                    </ul>
+                            <ul class="jam-session-list">
+                                <li class="jam-session-row">
+                                    <span class="jam-badge pagi">☀️ Pagi</span>
+                                    <span class="jam-time-label">08.00 – 11.00</span>
+                                    <span class="jam-wib">WIB</span>
+                                </li>
+                                <li class="jam-session-row">
+                                    <span class="jam-badge malam">🌙 Malam</span>
+                                    <span class="jam-time-label">20.00 – 22.00</span>
+                                    <span class="jam-wib">WIB</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                     <p class="jam-note">
                         ⚠️ Disarankan datang pada sesi pagi agar proses pendaftaran dapat selesai di hari yang sama.
                     </p>
